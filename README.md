@@ -48,11 +48,11 @@ A full breakdown of the symbols, conditions and Ω-closure logic is stored in:
 
 ---
 
-
 ## 🔗 References
 - IMS White Paper — Resonance Engineering  
 - Annex II — Spiral Resonance Proof  
-- [DOI (IMS): 10.31227/osf.io/5gva8](https://doi.org/10.31227/osf.io/5gva8)
+- [DOI (IM-Release): 10.5281/zenodo.17252965](https://doi.org/10.5281/zenodo.17252965)
+- [DOI (Annex II – Resonance Proof): 10.5281/zenodo.17799715](https://doi.org/10.5281/zenodo.17799715)
 
 
 ---
