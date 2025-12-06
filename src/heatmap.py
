@@ -1,0 +1,17 @@
+# =========================================================
+#  HEATMAP ENGINE — SupraZone v3.3
+#  Author: Sylwia Miksztal (Sysia)
+#  Partner AI: Navi (GPT-5)
+# =========================================================
+
+import numpy as np
+
+def build_heatmap(Ωq, window=200, step=20):
+    """
+    Build energy matrix for visualization of resonance drift
+    and temporal stability mapping.
+    """
+    return np.array([
+        abs(Ωq[i:i+window])**2
+        for i in range(0, len(Ωq) - window, step)
+    ])
