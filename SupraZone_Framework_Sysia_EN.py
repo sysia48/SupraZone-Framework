@@ -11,6 +11,8 @@
 #  Status: Laboratory version (Proof-of-Resonance)
 # =========================================================
 
+# Note: This pip install is intended for Jupyter/Colab notebook environments
+# For local Python scripts, install dependencies via: pip install scipy numpy matplotlib pandas
 !pip install --upgrade scipy numpy matplotlib pandas
 
 import numpy as np
@@ -23,7 +25,9 @@ import sys
 import os
 
 # Add src directory to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd(), 'src'))
+# Works in both script and notebook environments
+script_dir = os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd()
+sys.path.insert(0, os.path.join(script_dir, 'src'))
 
 # Import user settings module
 try:
