@@ -44,11 +44,15 @@ Full theoretical breakdown →
 
 ## 🧩 Architecture
 
+```
 /SupraZone-Framework
 │
 ├── README.md
+├── requirements.txt
 ├── SupraZone_Framework_Sysia_EN.py
 ├── configure_user.py
+├── example_user_settings.py
+├── test_user_settings.py
 ├── user_settings.json
 │
 ├── /src/
@@ -64,6 +68,7 @@ Full theoretical breakdown →
 │ └── SupraZone_Output_Sysia_EN.csv
 │
 └── LICENSE
+```
 
 ---
 
@@ -117,13 +122,25 @@ If no configuration is provided, the framework uses default settings from the or
 
 ---
 
-## ▶️ Running (Colab)
+## ▶️ Installation & Running
 
+### Installation
+For local Python environment:
+```bash
+pip install -r requirements.txt
+```
+
+### Running in Colab
 1. Open Colab  
 2. `File → Open → GitHub → sysia48/SupraZone-Framework`  
 3. (Optional) Configure user settings with `configure_user.py`  
 4. Run `SupraZone_Framework_Sysia_EN.py`  
 5. All data and plots will be generated automatically with your attribution.
+
+### Running Locally
+```bash
+python SupraZone_Framework_Sysia_EN.py
+```
 
 ---
 
