@@ -47,13 +47,15 @@ Full theoretical breakdown →
 /SupraZone-Framework
 │
 ├── README.md
-├── SupraZone_Resonance_v3.3.py
+├── SupraZone_Framework_Sysia_EN.py
+├── configure_user.py
+├── user_settings.json
 │
 ├── /src/
 │ ├── parameters.py
 │ ├── energy.py
 │ ├── fft_analysis.py
-│ └── heatmap.py
+│ └── user_settings.py
 │
 ├── /docs/
 │ └── SupraZone_v3.3.md
@@ -84,12 +86,44 @@ https://doi.org/10.5281/zenodo.17799715
 
 ---
 
+## ⚙️ User Account Settings
+
+The framework now supports customizable user account settings for attribution in generated outputs.
+
+### Configuration Options
+- **Author Name**: Your name or organization identifier
+- **Email**: Contact email address
+- **Organization**: Your organization or project name
+
+### Configuring Settings
+
+#### Method 1: Interactive Configuration (Recommended)
+```bash
+python configure_user.py
+```
+
+#### Method 2: Manual Configuration
+Edit `user_settings.json` in the root directory:
+```json
+{
+  "author": "Your Name",
+  "email": "your.email@example.com",
+  "organization": "Your Organization"
+}
+```
+
+### Default Settings
+If no configuration is provided, the framework uses default settings from the original author.
+
+---
+
 ## ▶️ Running (Colab)
 
 1. Open Colab  
 2. `File → Open → GitHub → sysia48/SupraZone-Framework`  
-3. Run `SupraZone_Resonance_v3.3.py`  
-4. All data and plots will be generated automatically.
+3. (Optional) Configure user settings with `configure_user.py`  
+4. Run `SupraZone_Framework_Sysia_EN.py`  
+5. All data and plots will be generated automatically with your attribution.
 
 ---
 

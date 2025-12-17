@@ -19,6 +19,22 @@ from scipy.integrate import simps
 from scipy.fftpack import fft, fftfreq
 import pandas as pd
 from datetime import datetime
+import sys
+import os
+
+# Add src directory to path for imports
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd(), 'src'))
+
+# Import user settings module
+try:
+    from user_settings import get_user_info
+    user_info = get_user_info()
+except ImportError:
+    # Fallback to defaults if module not available
+    user_info = {
+        "author": "Sylwia Miksztal (Sysia) — StrefaDK.club",
+        "email": "s.miksztal@gmail.com"
+    }
 
 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 print(f"🔹 SUPRA ZONE Framework initiated — {timestamp}")
@@ -75,8 +91,8 @@ df = pd.DataFrame({
     "t": t,
     "Ωq": Ωq,
     "timestamp": timestamp,
-    "author": "Sylwia Miksztal (Sysia) — StrefaDK.club",
-    "email": "s.miksztal@gmail.com"
+    "author": user_info.get("author", "Unknown"),
+    "email": user_info.get("email", "")
 })
 filename = "SupraZone_Output_Sysia_EN.csv"
 df.to_csv(filename, index=False)
