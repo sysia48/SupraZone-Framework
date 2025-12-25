@@ -1,0 +1,22 @@
+include README.md
+include LICENSE
+include requirements.txt
+include CHANGELOG.md
+include CONTRIBUTING.md
+include CODE_OF_CONDUCT.md
+
+recursive-include src *.py
+recursive-include docs *.md
+recursive-include examples *.py *.ipynb *.md
+
+exclude SupraZone_Framework_Sysia_EN.py
+exclude configure_user.py
+exclude example_user_settings.py
+exclude test_user_settings.py
+exclude user_settings.json
+
+global-exclude __pycache__
+global-exclude *.py[cod]
+global-exclude *.so
+global-exclude .DS_Store
+global-exclude *.csv

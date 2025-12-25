@@ -4,9 +4,16 @@ __pycache__/
 *$py.class
 *.so
 .Python
+
+# Virtual environments
 env/
 venv/
 ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Distribution / packaging
 build/
 develop-eggs/
 dist/
@@ -19,16 +26,56 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+pytestdebug.log
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.env.local
+.env.*.local
 
 # Output files
 *.csv
 SupraZone_Output_*.csv
+data/*.csv
 
 # IDE
 .vscode/
@@ -36,10 +83,31 @@ SupraZone_Output_*.csv
 *.swp
 *.swo
 *~
+*.sublime-project
+*.sublime-workspace
+.spyderproject
+.spyproject
+.ropeproject
 
 # OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
 
 # User settings (optional - users can modify this)
 # Uncomment the line below to ignore user-specific settings:
