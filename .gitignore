@@ -2,10 +2,13 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 *.so
 .Python
 env/
 venv/
+.env
+.venv
 ENV/
 build/
 develop-eggs/
@@ -22,6 +25,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+.pytest_cache/
 
 # Jupyter Notebook
 .ipynb_checkpoints
