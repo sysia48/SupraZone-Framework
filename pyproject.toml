@@ -70,15 +70,14 @@ Issues = "https://github.com/sysia48/SupraZone-Framework/issues"
 "IMS White Paper" = "https://doi.org/10.5281/zenodo.17252965"
 "Spiral Resonance Proof" = "https://doi.org/10.5281/zenodo.17799715"
 
-[project.scripts]
-suprazone-configure = "configure_user:main"
-
 [tool.setuptools]
-package-dir = {"" = "."}
-packages = ["src"]
+package-dir = {"" = "src"}
 
 [tool.setuptools.package-data]
 "*" = ["*.json", "*.md"]
+
+[project.scripts]
+suprazone-configure = "src.configure_user:main"
 
 [tool.black]
 line-length = 100

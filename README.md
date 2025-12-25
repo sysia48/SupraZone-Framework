@@ -271,7 +271,7 @@ The framework supports customizable user account settings for attribution in gen
 #### Method 1: Interactive Configuration (Recommended)
 
 ```bash
-python configure_user.py
+python -m src.configure_user
 ```
 
 This will launch an interactive prompt to update your settings.

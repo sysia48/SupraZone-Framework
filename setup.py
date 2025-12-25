@@ -56,8 +56,9 @@ setup(
     # License
     license='MIT',
     
-    # Package discovery
-    packages=find_packages(exclude=['tests', 'docs', 'examples']),
+    # Package discovery - src is the main package
+    packages=['src'],
+    package_dir={'src': 'src'},
     
     # Include additional files
     include_package_data=True,
@@ -119,7 +120,7 @@ setup(
     # Entry points for command-line scripts
     entry_points={
         'console_scripts': [
-            'suprazone-configure=configure_user:main',
+            'suprazone-configure=src.configure_user:main',
         ],
     },
     
