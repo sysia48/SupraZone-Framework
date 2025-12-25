@@ -157,7 +157,7 @@ t = np.linspace(0, 20, 5000)
 - **Main Framework**: `../SupraZone_Framework_Sysia_EN.py`
 - **Documentation**: `../docs/SupraZone_v3.3.md`
 - **Theoretical Background**: See DOI references in main README
-- **User Settings**: `../src/user_settings.py`
+- **User Settings**: `../suprazone/user_settings.py`
 
 ## Troubleshooting
 

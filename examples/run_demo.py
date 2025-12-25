@@ -35,10 +35,10 @@ from scipy.fftpack import fft, fftfreq
 import pandas as pd
 from datetime import datetime
 
-# Add parent and src directories to path
+# Add parent and suprazone directories to path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
-sys.path.insert(0, os.path.join(parent_dir, 'src'))
+sys.path.insert(0, os.path.join(parent_dir, 'suprazone'))
 
 # Import user settings
 try:

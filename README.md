@@ -70,26 +70,39 @@ Full theoretical breakdown →
 /SupraZone-Framework
 │
 ├── README.md
+├── LICENSE
 ├── requirements.txt
+├── setup.py
+├── pyproject.toml
+├── MANIFEST.in
 ├── SupraZone_Framework_Sysia_EN.py
 ├── configure_user.py
 ├── example_user_settings.py
 ├── test_user_settings.py
 ├── user_settings.json
 │
-├── /src/
+├── /suprazone/
+│ ├── __init__.py
+│ ├── configure_user.py
 │ ├── parameters.py
 │ ├── energy.py
 │ ├── fft_analysis.py
 │ └── user_settings.py
 │
+├── /examples/
+│ ├── README.md
+│ ├── run_demo.py
+│ └── basic_usage.py
+│
 ├── /docs/
 │ └── SupraZone_v3.3.md
 │
-├── /data/
-│ └── SupraZone_Output_Sysia_EN.csv
+├── /.github/
+│ └── /workflows/
+│   └── ci.yml
 │
-└── LICENSE
+└── /data/
+  └── SupraZone_Output_Sysia_EN.csv
 ```
 
 ---
@@ -201,8 +214,8 @@ plt.show()
 import sys
 import os
 
-# Add src directory to path
-sys.path.insert(0, 'src')
+# Add suprazone directory to path
+sys.path.insert(0, 'suprazone')
 
 from user_settings import get_user_info, update_user_settings
 
@@ -271,7 +284,7 @@ The framework supports customizable user account settings for attribution in gen
 #### Method 1: Interactive Configuration (Recommended)
 
 ```bash
-python -m src.configure_user
+python -m suprazone.configure_user
 ```
 
 This will launch an interactive prompt to update your settings.
@@ -279,7 +292,7 @@ This will launch an interactive prompt to update your settings.
 #### Method 2: Programmatic Configuration
 
 ```python
-from src.user_settings import update_user_settings
+from suprazone.user_settings import update_user_settings
 
 update_user_settings(
     author="Your Name",

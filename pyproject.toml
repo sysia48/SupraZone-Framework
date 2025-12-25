@@ -71,13 +71,13 @@ Issues = "https://github.com/sysia48/SupraZone-Framework/issues"
 "Spiral Resonance Proof" = "https://doi.org/10.5281/zenodo.17799715"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = {"suprazone" = "suprazone"}
 
 [tool.setuptools.package-data]
 "*" = ["*.json", "*.md"]
 
 [project.scripts]
-suprazone-configure = "src.configure_user:main"
+suprazone-configure = "suprazone.configure_user:main"
 
 [tool.black]
 line-length = 100

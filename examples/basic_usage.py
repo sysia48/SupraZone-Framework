@@ -27,7 +27,7 @@ except ImportError:
 
 # Add parent directory to path for imports
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(parent_dir, 'src'))
+sys.path.insert(0, os.path.join(parent_dir, 'suprazone'))
 
 def basic_resonance_example():
     """

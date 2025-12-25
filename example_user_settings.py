@@ -7,8 +7,8 @@
 import sys
 import os
 
-# Add src directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+# Add suprazone directory to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'suprazone'))
 
 from user_settings import get_user_info, update_user_settings, load_user_settings
 

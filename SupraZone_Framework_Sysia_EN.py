@@ -30,10 +30,10 @@ from datetime import datetime
 import sys
 import os
 
-# Add src directory to path for imports
+# Add suprazone directory to path for imports
 # Works in both script and notebook environments
 script_dir = os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd()
-sys.path.insert(0, os.path.join(script_dir, 'src'))
+sys.path.insert(0, os.path.join(script_dir, 'suprazone'))
 
 # Import user settings module
 try:
