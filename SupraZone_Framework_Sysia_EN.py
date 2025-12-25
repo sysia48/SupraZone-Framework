@@ -17,17 +17,23 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.integrate import simps
+
+# Import simpson (new) or simps (old) for compatibility
+try:
+    from scipy.integrate import simpson as simps
+except ImportError:
+    from scipy.integrate import simps
+
 from scipy.fftpack import fft, fftfreq
 import pandas as pd
 from datetime import datetime
 import sys
 import os
 
-# Add src directory to path for imports
+# Add suprazone directory to path for imports
 # Works in both script and notebook environments
 script_dir = os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd()
-sys.path.insert(0, os.path.join(script_dir, 'src'))
+sys.path.insert(0, os.path.join(script_dir, 'suprazone'))
 
 # Import user settings module
 try:
