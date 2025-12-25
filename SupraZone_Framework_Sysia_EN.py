@@ -17,7 +17,13 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.integrate import simps
+
+# Import simpson (new) or simps (old) for compatibility
+try:
+    from scipy.integrate import simpson as simps
+except ImportError:
+    from scipy.integrate import simps
+
 from scipy.fftpack import fft, fftfreq
 import pandas as pd
 from datetime import datetime

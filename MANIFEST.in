@@ -1,0 +1,33 @@
+# Include documentation and data files in the distribution
+include README.md
+include LICENSE
+include requirements.txt
+include user_settings.json
+
+# Include documentation
+recursive-include docs *.md
+
+# Include examples
+recursive-include examples *.py *.md
+
+# Exclude compiled Python files
+global-exclude *.py[cod]
+global-exclude __pycache__
+global-exclude *.so
+
+# Exclude version control
+global-exclude .git*
+
+# Exclude build artifacts
+global-exclude *.egg-info
+prune build
+prune dist
+
+# Exclude IDE files
+global-exclude .vscode
+global-exclude .idea
+global-exclude *.swp
+
+# Exclude output files
+global-exclude *.csv
+exclude SupraZone_Output_*.csv

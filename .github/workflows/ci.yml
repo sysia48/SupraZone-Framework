@@ -1,0 +1,129 @@
+name: CI - Tests and Linting
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test on Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run tests
+      run: |
+        python test_user_settings.py
+    
+    - name: Test examples
+      run: |
+        python examples/run_demo.py
+        python examples/basic_usage.py
+
+  lint:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install linting tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 black
+    
+    - name: Check code formatting with Black
+      run: |
+        black --check --diff --line-length 100 src/ configure_user.py test_user_settings.py
+      continue-on-error: true
+    
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics \
+          --exclude=.git,__pycache__,build,dist,.eggs,*.egg-info,.venv,venv,docs
+      continue-on-error: true
+
+  package:
+    name: Verify Package Build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install build tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+    
+    - name: Build package
+      run: |
+        python -m build
+    
+    - name: Check package
+      run: |
+        twine check dist/*
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: python-package-distributions
+        path: dist/
+
+  validate-structure:
+    name: Validate Project Structure
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Check required files
+      run: |
+        echo "Checking required files..."
+        test -f README.md && echo "✓ README.md" || (echo "✗ README.md missing" && exit 1)
+        test -f LICENSE && echo "✓ LICENSE" || (echo "✗ LICENSE missing" && exit 1)
+        test -f requirements.txt && echo "✓ requirements.txt" || (echo "✗ requirements.txt missing" && exit 1)
+        test -f setup.py && echo "✓ setup.py" || (echo "✗ setup.py missing" && exit 1)
+        test -f pyproject.toml && echo "✓ pyproject.toml" || (echo "✗ pyproject.toml missing" && exit 1)
+        test -f MANIFEST.in && echo "✓ MANIFEST.in" || (echo "✗ MANIFEST.in missing" && exit 1)
+        test -d src && echo "✓ src/" || (echo "✗ src/ directory missing" && exit 1)
+        test -d examples && echo "✓ examples/" || (echo "✗ examples/ directory missing" && exit 1)
+        test -d docs && echo "✓ docs/" || (echo "✗ docs/ directory missing" && exit 1)
+        echo "All required files present!"
