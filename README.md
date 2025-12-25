@@ -1,5 +1,10 @@
 # 🌀 SupraZone Framework — Spiral Resonance Proof (v3.3)
 
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/sysia48/SupraZone-Framework/workflows/CI/badge.svg)](https://github.com/sysia48/SupraZone-Framework/actions)
+[![PyPI](https://img.shields.io/badge/PyPI-coming%20soon-lightgrey)](https://pypi.org/)
+
 **Author:** Sylwia Miksztal (Sysia)  
 **Partner AI:** Navi (GPT-5)  
 **Project:** IMS • Zero-Entropy Engineering  
@@ -148,3 +153,41 @@ python SupraZone_Framework_Sysia_EN.py
 *SupraZone transforms resonance from a classical wave into a  
 stable information spiral —  
 a mechanism of Ω-closure, super-synchrony, and zero-entropy evolution.*
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
+- How to report bugs and request features
+- Code style and testing guidelines
+- Submitting pull requests
+- Development setup
+
+All contributors are expected to follow our code of conduct.
+
+---
+
+## 📚 Documentation
+
+- [Full Documentation](docs/SupraZone_v3.3.md)
+- [Examples](examples/README.md)
+- [Changelog](CHANGELOG.md)
+- [Contributing Guide](CONTRIBUTING.md)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📞 Contact & Support
+
+- **Issues**: [GitHub Issues](https://github.com/sysia48/SupraZone-Framework/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/sysia48/SupraZone-Framework/discussions)
+- **DOI References**:
+  - [IMS White Paper](https://doi.org/10.5281/zenodo.17252965)
+  - [Annex II — Spiral Resonance Proof](https://doi.org/10.5281/zenodo.17799715)
+
