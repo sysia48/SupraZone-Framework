@@ -11,3 +11,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial documentation files (README.md, CONTRIBUTING.md, LICENSE)
 - GitHub Actions CI workflow for testing
 - Basic project structure
+
