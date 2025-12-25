@@ -1,5 +1,5 @@
 # SupraZone Framework Package
-# Makes the src directory importable as a package
+# Makes the suprazone directory importable as a package
 
 __version__ = "3.3.0"
 __author__ = "Sylwia Miksztal (Sysia)"
